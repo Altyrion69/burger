@@ -1,0 +1,273 @@
+/* -------------------initialisation-------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --fond-de-cite: #E8E9EB;
+    --font-title: 'Roboto Slab', serif;
+    --font-text: 'Roboto Slab', sans-serif;
+    --color-size-text: 1rem;
+    --color-font: #000000ef;
+    --color-nav-bar: #3460B1;
+    --font-weight-title: 600;
+    --font-weight-text: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: var(--fond-de-cite);
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/*--------------------burger menu--------------------*/
+header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* burger icon */
+.menu-btn {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 10% 0 0 50%;
+    background: var(--color-nav-bar);
+}
+
+.menu-btn .bar {
+    width: 30px;
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    background-color: var(--fond-de-cite);
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-btn .bar:nth-of-type(2) {
+    top: calc(50% - 9px);
+}
+
+.menu-btn .bar:nth-of-type(3) {
+    top: calc(50% + 9px);
+}
+
+/* change icone when menu is open */
+.menu-btn.active .bar:nth-of-type(1) {
+    display: none;
+}
+
+.menu-btn.active .bar:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);
+}
+
+.menu-btn.active .bar:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg);
+}
+
+/* menu is here */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    background: var(--color-nav-bar);
+    transform: translateX(100%);
+    transition: transform 0.5s;
+}
+
+.nav.active {
+    transform: translateX(0);
+}
+
+li {
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.nav .nav__list_item {
+    list-style-type: none;
+    background: var(--color-nav-bar);
+}
+
+/* --------------------------------------infocontact ------------------------*/
+.description {
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-auto-rows: minmax(10px, auto)
+}
+
+.info {
+    display: grid;
+    width: 95%;
+    height: auto;
+    font-family: var(--font_text);
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgba(42, 42, 42, 0.33);
+    font-style: normal;
+    font-weight: var(--font-weight-title);
+    line-height: 125%;
+    padding: 1rem;
+}
+
+.line {
+    width: 70%;
+    height: 2px;
+    background: var(--color-nav-bar);
+    justify-self: center;
+    align-self: center;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: var(--font-text);
+    width: 95%;
+    height: auto;
+    font-weight: var(--font-weight-text);
+    color: var(--color-font);
+    padding: 1.25rem
+}
+
+div p {
+    display: grid;
+    padding: 2%;
+    line-height: 1.5rem;
+}
+
+.semi-title {
+    font-weight: var(--font-weight-title);
+    line-height: 1.5rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.logo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 15%);
+}
+
+.fa-brands {
+    padding: 25%;
+    text-align: center;
+}
+
+/* ----------------------------------------Experience---------------------------------------------------------  */
+.experience-container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    text-align: center;
+    font-family: var(--font-title);
+    font-weight: var(--font-weight-title);
+    font-size: 2rem;
+}
+
+.experience {
+    text-align: center;
+    font-family: var(--font-text);
+    font-weight: var(--font-weight-text);
+    font-size: 1.5rem;
+    margin: 1rem;
+    width: 95%;
+}
+
+.job {
+    padding: 0.5rem 0;
+}
+
+.companyCity {
+    padding: 0.5rem 0;
+}
+
+.date {
+    padding: 0.5rem 0;
+}
+
+
+
+.learnmore {
+    display: inline-block;
+    font-size: 0.75rem;
+}
+
+.whatIDo {
+    display: none;
+}
+
+
+/* -------------------media queries pour + 780 px--------------------- */
+@media screen and (min-width:780px) {
+    .description {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .info {
+        display: grid;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        width: auto;
+    }
+
+    .line {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .contact {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    img {
+        display: grid;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 5;
+        border-radius: 0 50%;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        height: auto;
+    }
+
+    .logo {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    .fa-brands {
+        padding: 25%;
+        text-align: center;
+        font-size: 2rem;
+    }
+}
